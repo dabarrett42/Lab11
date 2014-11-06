@@ -50,6 +50,10 @@ int main()
    {
 		CD* cd = unsorted_cds[v];
 		cd->displayCD();
+		if (v < 20)
+		{
+			bst->remove(cd->getKey());
+		}
    }
    CD** sorted_cds = bst->treeSort(unsorted_cds, num_items, &CD::compare_items, &CD::compare_keys);
    for(int i = 0; i < num_items; i++)
