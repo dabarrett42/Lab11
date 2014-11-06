@@ -61,7 +61,8 @@ int main()
 		CD* cd = sorted_cds[i];
 		cd->displayCD();
    }
-
+	CD* item = bst->getRootItem();
+	bst->remove(item->getKey());
 
 
 
