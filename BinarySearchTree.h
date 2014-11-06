@@ -80,7 +80,7 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 	
 	if(comp == 0)
 	{
-
+		
 	}
 	else if(comp < 0)
 	{
@@ -128,8 +128,11 @@ template < class T >
 T* BinarySearchTree<T>::findLeftMost(TreeNode<T>* tNode)
 {
    //DO THIS (use a while loop)
-
-
+	while(tNode != NULL)
+	{
+	
+	}
+	
 
 
 
