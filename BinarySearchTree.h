@@ -80,15 +80,16 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 	
 	if(comp == 0)
 	{
-		
+		sze--;
+		return removeNode(tNode);
 	}
 	else if(comp < 0)
 	{
-
+		sze--;
 	}
 	else
 	{
-
+		sze--;
 	}
 
 }
@@ -153,7 +154,7 @@ template < class T >
 T** BinarySearchTree<T>::toArray()
 {
    //DO THIS
-
+	
 
 
 }
@@ -162,7 +163,7 @@ template < class T >
 T** BinarySearchTree<T>::treeSort(T** items, int num_itemss, int (*comp_items) (T* item_1, T* item_2), int (*comp_keys) (String* key, T* item))
 {
    //DO THIS
-
+	
 
 
 }
