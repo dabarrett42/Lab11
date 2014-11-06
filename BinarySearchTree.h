@@ -61,7 +61,7 @@ template < class T >
 void BinarySearchTree<T>::remove(String* sk)
 {
    //DO THIS
-
+	root = removeItem(root, sk);
 
 
 }
@@ -70,8 +70,23 @@ template < class T >
 TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 {
    //DO THIS
-
-
+	if(tNode == NULL)
+	{
+		return tNode;
+	}
+	
+	T* node_items = tNode->getItem();
+	int comp = (*compare_keys) (sk, node_items);
+	
+	if(comp == 0)
+	{
+	
+	}
+	else if(comp < 0)
+	else
+	{
+	
+	}
 
 }
 
