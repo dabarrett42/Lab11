@@ -7,6 +7,8 @@
 #include "Line.h"
 #include "Drawable.h"
 using CSC2110::String;
+#include <iostream> //for stubs
+using namespace std; //for stubs
 
 template < class T >
 class BinarySearchTree : public Drawable
@@ -80,12 +82,15 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 	
 	if(comp == 0)
 	{
-	
+	 cout << "stub";
 	}
 	else if(comp < 0)
+	{
+	 cout << "stub";
+	}
 	else
 	{
-	
+	 cout << "stub";
 	}
 
 }
