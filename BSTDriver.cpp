@@ -47,7 +47,11 @@ int main()
    //test your tree sort method
    CD** unsorted_cds = cds->toArray();
    CD** sorted_cds = bst->treeSort(unsorted_cds, num_items, &CD::compare_items, &CD::compare_keys);
-
+   for(int i = 0; i < num_items; i++)
+   {
+		CD* cd = sorted_cds[i];
+		cd->displayCD();
+   }
 
 
 
