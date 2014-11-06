@@ -21,8 +21,8 @@ all: Lab11
 Lab11: 		$(FILES)
 		$(LINK) BST.exe $(FILES) $(LIBS)
 	
-DrawBST.o: DrawBST.cpp BinaryTreeIterator.h BinarySearchTree.h
-			$(COMPILE) DrawBST.cpp
-	
 BSTDriver.o: BSTDriver.cpp BinaryTreeIterator.h BinarySearchTree.h
 			$(COMPILE) BSTDriver.cpp
+			
+DrawBST.o: DrawBST.cpp BinaryTreeIterator.h BinarySearchTree.h
+			$(COMPILE) DrawBST.cpp
