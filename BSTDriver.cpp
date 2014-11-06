@@ -46,7 +46,7 @@ int main()
    //DO THIS
    //test your tree sort method
    CD** unsorted_cds = cds->toArray();
-   CD** sorted_cds = 
+ //  CD** sorted_cds = bst->treeSort(unsorted_cds, );
 
 
 
