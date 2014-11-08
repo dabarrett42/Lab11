@@ -62,7 +62,11 @@ void BinarySearchTree<T>::remove(String* sk)
 {
    //DO THIS
 	root = removeItem(root, sk);
-
+	/*
+	side-note:
+		setting root equal to the function would be used as a precaution 
+		that if the root is deleted it will reset root
+	*/
 
 }
 
@@ -90,7 +94,9 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 	}
 	else
 	{
-
+		TreeNode<T>* sub = removeItem(tNode->getRight(),sk);
+		tNode->setRight(sub);
+		return tNode;
 	}
 
 }
@@ -118,8 +124,10 @@ TreeNode<T>* BinarySearchTree<T>::removeNode(TreeNode<T>* tNode)
    else 
    {
       //DO THIS
-
-
+	  TreeNode<T>* temp = tNode->getLeft();
+		delete tNode;
+		return temp;
+		TreeNode<T>* right = tNode->getRight(tNode);
 
 
 
