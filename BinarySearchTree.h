@@ -75,8 +75,8 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 		return tNode;
 	}
 	
-	T* node_items = tNode->getItem();
-	int comp = (*compare_keys) (sk, node_items);
+	T* nodeItem = tNode->getItem();
+	int comp = (*compare_keys) (sk, nodeItem);
 	
 	if(comp == 0)
 	{
@@ -85,11 +85,12 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 	}
 	else if(comp < 0)
 	{
-		sze--;
+		TreeNode<T>* subTree = removeItem(tNode->getLeft(), sk);
+		tNode->setLeft(subTree);
 	}
 	else
 	{
-		sze--;
+
 	}
 
 }
