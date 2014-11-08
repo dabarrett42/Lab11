@@ -139,12 +139,10 @@ T* BinarySearchTree<T>::findLeftMost(TreeNode<T>* tNode)
    //DO THIS (use a while loop)
 	while(tNode != NULL)
 	{
-	
+		tNode = tNode->getLeft();
 	}
 	
-
-
-
+	return tNode->getItem();
 }
 
 template < class T >
