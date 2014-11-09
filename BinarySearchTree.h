@@ -91,7 +91,7 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 	{
 		TreeNode<T>* subTree = removeItem(tNode->getLeft(), sk);
 		tNode->setLeft(subTree);
-		
+		return tNode;
 	}
 	else
 	{
