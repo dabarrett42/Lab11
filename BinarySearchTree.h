@@ -162,17 +162,15 @@ TreeNode<T>* BinarySearchTree<T>::removeLeftMost(TreeNode<T>* tNode)
 		return tNode;
 	}
 
-
-
-
 }
 
 template < class T >
 T** BinarySearchTree<T>::toArray()
 {
    //DO THIS
+	// need to get left most then go to right and set items into an array
+	T** array; 
 	
-
 
 }
 
