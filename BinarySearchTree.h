@@ -149,7 +149,18 @@ template < class T >
 TreeNode<T>* BinarySearchTree<T>::removeLeftMost(TreeNode<T>* tNode)
 {
    //DO THIS (recursion)
-
+	if(tNode->getLeft() == NULL)
+	{
+		TreeNode<T>* right = tNode->getRight();
+		delete tNode;
+		return right;
+	}
+	else
+	{
+		TreeNode<T>* sub = removeLeftMost(tNode);
+		tNode->setLeft(sub);
+		return tNode;
+	}
 
 
 
