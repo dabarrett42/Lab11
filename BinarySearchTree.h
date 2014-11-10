@@ -200,12 +200,14 @@ template < class T >
 T** BinarySearchTree<T>::treeSort(T** items, int num_itemss, int (*comp_items) (T* item_1, T* item_2), int (*comp_keys) (String* key, T* item))
 {
    //DO THIS
-	BinarySearchTree<T>* bst = new BinarySearchTree(comp_items, comp_keys);
-   for(int i = 0; i < num_itemss; i++)
-   {
+	destroy();
+	T** sorted;
+	for(int i = 0; i < num_itemss; i++)
+	{
 		bst->insert(items[i]);
-   }
-   
+	}
+	
+
 }
 
 template < class T >
