@@ -387,5 +387,4 @@ void BinarySearchTree<T>::drawRec(TreeNode<T>* tNode, Cairo::RefPtr<Cairo::Conte
 
 template < class T >
 void BinarySearchTree<T>::mouseClicked(int x, int y) {}
-
 #endif
