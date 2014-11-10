@@ -206,7 +206,7 @@ T** BinarySearchTree<T>::treeSort(T** items, int num_itemss, int (*comp_items) (
 	{
 		bst->insert(items[i]);
 	}
-	
+	return toArray();
 
 }
 
