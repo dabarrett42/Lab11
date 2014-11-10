@@ -7,8 +7,7 @@
 #include "Line.h"
 #include "Drawable.h"
 using CSC2110::String;
-#include <iostream>
-using namespace std;
+
 template < class T >
 class BinarySearchTree : public Drawable
 {
@@ -62,7 +61,6 @@ template < class T >
 void BinarySearchTree<T>::remove(String* sk)
 {
    //DO THIS
-   cout << "Remove";
 	root = removeItem(root, sk);
 	/*
 	side-note:
@@ -76,7 +74,6 @@ template < class T >
 TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 {
    //DO THIS
-   cout << "remove item";
 	if(tNode == NULL)
 	{
 		return tNode;
@@ -108,23 +105,19 @@ TreeNode<T>* BinarySearchTree<T>::removeItem(TreeNode<T>* tNode, String* sk)
 template < class T >
 TreeNode<T>* BinarySearchTree<T>::removeNode(TreeNode<T>* tNode)
 {
-	cout << "RemoveNode";
    if (tNode->getLeft() == NULL && tNode->getRight() == NULL)
    {
-	cout << "Both Null";
       delete tNode;
       return NULL;
    }
    else if (tNode->getLeft() == NULL)
    {
-		cout << "Left Null";
       TreeNode<T>* temp = tNode->getRight();
       delete tNode;
       return temp;
    }
    else if (tNode->getRight() == NULL)
    {
-	cout << "Right Null";
       TreeNode<T>* temp = tNode->getLeft();
       delete tNode;
       return temp;
@@ -132,15 +125,10 @@ TreeNode<T>* BinarySearchTree<T>::removeNode(TreeNode<T>* tNode)
    else 
    {
       //DO THIS
-	   cout << "Both Exist";
 	  T* replacing = findLeftMost(tNode->getRight());
-	  cout << "Past find left most";
 	  tNode->setItem(replacing);
-	  cout << "In remove left most";
 	  TreeNode<T>* sub = removeLeftMost(tNode->getRight());
-	  cout << "Maybe not";
 	  tNode->setRight(sub);
-	  cout << "Before return";
 	  return tNode;
    }
 }
@@ -200,13 +188,14 @@ template < class T >
 T** BinarySearchTree<T>::treeSort(T** items, int num_itemss, int (*comp_items) (T* item_1, T* item_2), int (*comp_keys) (String* key, T* item))
 {
    //DO THIS
-	destroy();
-	T** sorted;
+	BinarySearchTree<T>* bst = new BinarySearchTree(comp_items, comp_keys);
 	for(int i = 0; i < num_itemss; i++)
 	{
 		bst->insert(items[i]);
 	}
-	return toArray();
+	T** sorted  = bst->toArray();
+	delete bst;
+	return sorted;
 
 }
 
