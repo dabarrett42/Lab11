@@ -8,6 +8,9 @@
 #include "Drawable.h"
 using CSC2110::String;
 
+#include <iostream>
+using namespace std;
+
 template < class T >
 class BinarySearchTree : public Drawable
 {
@@ -157,7 +160,7 @@ TreeNode<T>* BinarySearchTree<T>::removeLeftMost(TreeNode<T>* tNode)
 	}
 	else
 	{
-		TreeNode<T>* sub = removeLeftMost(tNode);
+		TreeNode<T>* sub = removeLeftMost(tNode->getLeft());
 		tNode->setLeft(sub);
 		return tNode;
 	}
@@ -188,12 +191,13 @@ template < class T >
 T** BinarySearchTree<T>::treeSort(T** items, int num_itemss, int (*comp_items) (T* item_1, T* item_2), int (*comp_keys) (String* key, T* item))
 {
    //DO THIS
+	
 	BinarySearchTree<T>* bst = new BinarySearchTree(comp_items, comp_keys);
 	for(int i = 0; i < num_itemss; i++)
 	{
 		bst->insert(items[i]);
 	}
-	T** sorted  = bst->toArray();
+	T** sorted = bst->toArray();
 	delete bst;
 	return sorted;
 
