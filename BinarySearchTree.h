@@ -169,17 +169,16 @@ T** BinarySearchTree<T>::toArray()
 {
     //DO THIS
 	// need to get left most then go to right and set items into an array
-	T** array;	
-	/*
-	QueueLinked<T>* queue = new QueueLinked<T>();
-	for(int i = 0; i < sze; i++)
-	{
-		queue->enqueue(array[i]);
-	}
-	*/
-	BinaryTreeIterator<T>* q = iterator();
-	q->setInorder();
+	T** array = new T*[sze];	
+	int index = 0;
+	BinaryTreeIterator<T>* iter = iterator();
+	iter->setInorder();
 	
+	while(iter->hasNext())
+	{
+		array[index] = iter->next();
+		index++;
+	}
 	
 	
 	return array;
@@ -189,9 +188,11 @@ template < class T >
 T** BinarySearchTree<T>::treeSort(T** items, int num_itemss, int (*comp_items) (T* item_1, T* item_2), int (*comp_keys) (String* key, T* item))
 {
    //DO THIS
-	
-
-
+	BinarySearchTree<T>* bst = new BinarySearchTree(comp_items, comp_keys);
+   for(int i = 0; i < num_itemss; i++)
+   {
+		bst->insert(items[i]);
+   }
 }
 
 template < class T >
