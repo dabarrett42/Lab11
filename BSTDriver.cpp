@@ -46,27 +46,13 @@ int main()
    //DO THIS
    //test your tree sort method
    CD** unsorted_cds = cds->toArray();
-   for(int v = 0; v < num_items; v++)
+   CD** sorted_cds = bst->treeSort(unsorted_cds, num_items,&CD::compare_items, &CD::compare_keys);
+   for(int e=0;e<num_items;e++)
    {
-		CD* cd = unsorted_cds[v];
-		cd->displayCD();
-		if (v < 20)
-		{
-			bst->remove(cd->getKey());
-		}
-   }
-   CD** sorted_cds = bst->treeSort(unsorted_cds, num_items, &CD::compare_items, &CD::compare_keys);
-   for(int i = 0; i < num_items; i++)
-   {
-		CD* cd = sorted_cds[i];
+	cout << "adding cds";
+		CD* cd = sorted_cds[e];
 		cd->displayCD();
    }
-	CD* item = bst->getRootItem();
-	bst->remove(item->getKey());
-
-
-
-
 
 
 
